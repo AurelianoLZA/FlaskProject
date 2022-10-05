@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index file</title>
+</head>
+<body>
+
+<h1> This is the Index file </h1>
+
+<main>
+    {% for message in get_flashed_messages() %}
+        <div class="alert">{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+</main>
+
+<!--<form>-->
+<!--    <input type = "text" name = "username">-->
+<!--    <br>-->
+<!--    <input type = "password" name = "password">-->
+<!--</form>-->
+<!--<button type="button"> submit </button>-->
+
+</body>
+</html>

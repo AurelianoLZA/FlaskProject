@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Edit Note {{note.id}} </h2>
+
+<form method="post">
+    {{ form.csrf_token }}
+    {{ form.body.label }}<br>
+    {{ form.body }}<br>
+    {% if form.body.errors %}
+        {% for message in form.body.errors %}
+        <small class="error">{{ message }}</small><br>
+        {% endfor %}
+    {% endif %}
+    {{ form.submit }}<br>
+</form>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Notes Archive</h2>
+
+<a href="{{url_for('newNote')}}">Create a new note here </a>
+<h4>{{notes|length}} notes: </h4>
+{% for note in notes %}
+    <div class = "note">
+        <p>ID is : {{note.id}} </p>
+        <p>Note content is : {{note.body}}</p>
+        <a href="{{url_for('edit_note',note_id=note.id)}}">edit this note </a>
+        <br>
+        <a href="{{url_for('delete_note',note_id=note.id)}}">delete this note </a>
+    </div>
+{% endfor %}
+
+{% endblock %}
